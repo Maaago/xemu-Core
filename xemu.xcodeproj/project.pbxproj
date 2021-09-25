@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1376F8BB26FBFAB8009E945F /* xemuGameCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1376BCA526FB83EA009E945F /* xemuGameCore.mm */; };
-		1376F8BD26FBFABC009E945F /* xemuGameCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1376BCA426FB83EA009E945F /* xemuGameCore.h */; };
+		135A9CEC26FC887A00773DCF /* Xemu.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 135A9CEA26FC887A00773DCF /* Xemu.hpp */; };
+		135A9CED26FC887A00773DCF /* Xemu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 135A9CEB26FC887A00773DCF /* Xemu.cpp */; };
+		1376F8BB26FBFAB8009E945F /* XemuGameCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1376BCA526FB83EA009E945F /* XemuGameCore.mm */; };
+		1376F8BD26FBFABC009E945F /* XemuGameCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1376BCA426FB83EA009E945F /* XemuGameCore.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1376BCA426FB83EA009E945F /* xemuGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xemuGameCore.h; sourceTree = "<group>"; };
-		1376BCA526FB83EA009E945F /* xemuGameCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = xemuGameCore.mm; sourceTree = "<group>"; };
+		135A9CEA26FC887A00773DCF /* Xemu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Xemu.hpp; sourceTree = "<group>"; };
+		135A9CEB26FC887A00773DCF /* Xemu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xemu.cpp; sourceTree = "<group>"; };
+		1376BCA426FB83EA009E945F /* XemuGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XemuGameCore.h; sourceTree = "<group>"; };
+		1376BCA526FB83EA009E945F /* XemuGameCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XemuGameCore.mm; sourceTree = "<group>"; };
 		1376BCA826FB83EA009E945F /* transaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transaction.json; sourceTree = "<group>"; };
 		1376BCA926FB83EA009E945F /* dump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dump.json; sourceTree = "<group>"; };
 		1376BCAA26FB83EA009E945F /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
@@ -8305,6 +8309,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135A9CE926FC883900773DCF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				135A9CEB26FC887A00773DCF /* Xemu.cpp */,
+				135A9CEA26FC887A00773DCF /* Xemu.hpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		1376BCA626FB83EA009E945F /* xemu */ = {
 			isa = PBXGroup;
 			children = (
@@ -20951,9 +20964,10 @@
 		1386931C26FB819E009912DA = {
 			isa = PBXGroup;
 			children = (
+				135A9CE926FC883900773DCF /* src */,
 				1376BCA626FB83EA009E945F /* xemu */,
-				1376BCA426FB83EA009E945F /* xemuGameCore.h */,
-				1376BCA526FB83EA009E945F /* xemuGameCore.mm */,
+				1376BCA426FB83EA009E945F /* XemuGameCore.h */,
+				1376BCA526FB83EA009E945F /* XemuGameCore.mm */,
 				1386932626FB819E009912DA /* Products */,
 				1376F8A126FBF2B0009E945F /* Frameworks */,
 			);
@@ -20974,7 +20988,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1376F8BD26FBFABC009E945F /* xemuGameCore.h in Headers */,
+				1376F8BD26FBFABC009E945F /* XemuGameCore.h in Headers */,
+				135A9CEC26FC887A00773DCF /* Xemu.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -21034,7 +21049,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1376F8BB26FBFAB8009E945F /* xemuGameCore.mm in Sources */,
+				135A9CED26FC887A00773DCF /* Xemu.cpp in Sources */,
+				1376F8BB26FBFAB8009E945F /* XemuGameCore.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -21078,6 +21094,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Users/francesco/Library/Developer/Xcode/DerivedData/OpenEmu-fubxuwxujqohxsfgfuxnkzssbvpz/Build/Products/Debug/";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -21092,7 +21109,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/xemu/include";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/xemu/include",
+					"$(PROJECT_DIR)/xemu/build",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -21138,6 +21160,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Users/francesco/Library/Developer/Xcode/DerivedData/OpenEmu-fubxuwxujqohxsfgfuxnkzssbvpz/Build/Products/Debug/";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -21146,7 +21169,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/xemu/include";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/xemu/include",
+					"$(PROJECT_DIR)/xemu/build",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
